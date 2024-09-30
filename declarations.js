@@ -21,6 +21,3 @@ for (let [key,_] of Object.entries(nested)) {
 	Object.freeze(nested[key])
 }
 Object.freeze(nested)
-nested.obj = 120
-console.log(nested.obj)
-
