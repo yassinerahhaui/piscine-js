@@ -1,5 +1,5 @@
 const planets = {
-    earth: (1 * 60 * 60 * 24 * 365.25),
+    earth: 1,
     mercury: 0.2408467,
     venus: 0.61519726,
     mars: 1.8808158,
@@ -9,4 +9,6 @@ const planets = {
     neptune: 164.79132
 };
 
-const dogYears = (planet, seconds) => parseFloat(((seconds / planets[planet]) * ((7 * planets["earth"])/planets[planet])).toFixed(2));
+const dogYears = (planet, seconds) => {
+    return parseFloat((seconds * planets[planet] / (1 * 60 * 60 * 24 * 365.25)).toFixed(2))
+}
