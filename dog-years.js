@@ -10,5 +10,5 @@ const planets = {
 };
 
 const dogYears = (planet, seconds) => {
-    return parseFloat((seconds * planets[planet] / (1 * 60 * 60 * 24 * 365.25)).toFixed(2))
+    return parseFloat(((seconds * planets[planet] / (1 * 60 * 60 * 24 * 365.25)) * 7).toFixed(2))
 }
