@@ -9,6 +9,6 @@ const planets = {
     neptune: 164.79132
 };
 
-const dogYears = (planet, seconds) => parseFloat(((seconds * planets[planet] / (1 * 60 * 60 * 24 * 365.25)) * 7).toFixed(2))
+const dogYears = (planet, seconds) => parseFloat((seconds * (planets[planet] / (1 * 60 * 60 * 24 * 365.25)) * 7).toFixed(2))
 
-// console.log(dogYears("earth", 1000000000))
+console.log(dogYears("earth", 1000000000))
