@@ -1,5 +1,5 @@
 const planets = {
-    earth: 31557600,
+    earth: (1*60*60*24*365.25),
     mercury: 0.2408467,
     venus: 0.61519726,
     mars: 1.8808158,
@@ -9,4 +9,4 @@ const planets = {
     neptune: 164.79132
   };
 
-const dogYears = (planet, seconds) => seconds /= planets[planet];
+const dogYears = (planet, seconds) => ((seconds / planets[planet]) * 7).toFixed(2);
