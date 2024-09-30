@@ -16,6 +16,8 @@ const nested = {
 	arr: arrVal,
 	obj: objVal
 	}
-Object.freeze(nested.obj)
-Object.freeze(nested)
+
+for (let [key,_] of Object.entries(nested)) {
+	Object.freeze(nested[key])
+}
 
