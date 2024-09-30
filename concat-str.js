@@ -1,0 +1,1 @@
+const concatStr = (el1, el2) => String(el1) + el2;
