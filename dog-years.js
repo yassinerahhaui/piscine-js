@@ -9,4 +9,4 @@ const planets = {
     neptune: 164.79132
 };
 
-const dogYears = (planet, seconds) => parseFloat(((seconds / planets[planet]) * 7).toFixed(2));
+const dogYears = (planet, seconds) => parseFloat(((seconds / planets[planet]) * ((7 * planets["earth"])/planets[planet])).toFixed(2));
