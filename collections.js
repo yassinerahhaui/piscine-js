@@ -1,17 +1,25 @@
-/*
-    arrToSet: from Array to Set.
-    arrToStr: from Array to string.
-    setToArr: from Set to Array.
-    setToStr: from Set to string.
-    strToArr: from string to Array.
-    strToSet: from string to Set.
-    mapToObj: from Map to Object.
-    objToArr: from Object to Array.
-    objToMap: from Object to Map.
-    arrToObj: from Array to Object.
-    strToObj: from string to Object.
-*/
-
+const superTypeOf = (arg) => {
+    if (arg instanceof Map) {
+        return 'Map'
+    } else if (arg instanceof Set) {
+        return 'Set'
+    } else if (Array.isArray(arg)) {
+        return 'Array'
+    } else if (typeof arg === "string") {
+        return 'String'
+    } else if ((typeof arg === "number") || Number.isNaN(arg)) {
+        return 'Number'
+    } else if (arg === null) {
+        return 'null'
+    } else if (typeof arg === "undefined") {
+        return 'undefined'
+    } else if (typeof arg === "function") {
+        return 'Function'
+    } else if (typeof arg === "object") {
+        return 'Object'
+    }
+}
+console.log(superTypeOf("new Map()"));
 const arrToSet = (arr) => {
     const result = new Set()
     arr.map(el=> result.add(el))
@@ -30,5 +38,36 @@ const setToArr = (set) => {
 const setToStr = (set) => setToArr(set).toString();
 const strToArr = (str) => str.split("");
 const strToSet = (str) => new Set(str.split(""));
-const mapToObj = (map) => 
-console.log(strToSet("hello"));
+const mapToObj = (m) => {
+    const res = new Object()
+    for (let [key, value] of m) {
+        res[key] = value
+        }
+    return res
+}
+const objToArr = (obj) => Object.values(obj)
+const objToMap = (obj) => {
+    const res = new Map();
+    for (let [key,value] of Object.entries(obj)) {
+        res.set(key,value)
+    }
+    return res
+}
+const arrToObj = (arr) => {
+    const obj = {}
+    let num = 0
+    arr.map(el => {
+        obj[num] = el;
+        num++
+    })
+    return obj
+}
+const strToObj = (str) => {
+    const obj = {}
+    let index = 0
+    for (let item of str.split("")) {
+        obj[index] = item
+        index++
+    }
+    return obj
+}
