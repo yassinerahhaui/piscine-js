@@ -19,7 +19,6 @@ const superTypeOf = (arg) => {
         return 'Object'
     }
 }
-console.log(superTypeOf("new Map()"));
 const arrToSet = (arr) => {
     const result = new Set()
     arr.map(el=> result.add(el))
@@ -35,7 +34,7 @@ const setToArr = (set) => {
     }
     return arr
 };
-const setToStr = (set) => setToArr(set).toString();
+const setToStr = (set) => setToArr(set).join("");
 const strToArr = (str) => str.split("");
 const strToSet = (str) => new Set(str.split(""));
 const mapToObj = (m) => {
@@ -65,9 +64,10 @@ const arrToObj = (arr) => {
 const strToObj = (str) => {
     const obj = {}
     let index = 0
-    for (let item of str.split("")) {
+    for (let item of str.split()) {
         obj[index] = item
         index++
     }
     return obj
 }
+console.log(setToStr(new Set([1, 4, 3])));
