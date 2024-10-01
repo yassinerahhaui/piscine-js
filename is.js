@@ -1,5 +1,5 @@
 is.num = (arg) => typeof arg === "number";
-is.nan = (arg) => Object.is(arg, NaN);
+is.nan = (arg) => Number.isNaN(arg);
 is.str = (arg) => typeof arg === "string";
 is.bool = (arg) => typeof arg === "boolean";
 is.undef = (arg) => typeof arg === "undefined";
