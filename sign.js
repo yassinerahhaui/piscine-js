@@ -1,0 +1,1 @@
+const sign = (num) => num === 0? 0 : num > 0 ? 1 : -1;
