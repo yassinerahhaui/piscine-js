@@ -1,6 +1,6 @@
 const blockChain = (data,prev) => {
     typeof prev === "undefined" ? prev = { index: 0, hash: '0' } : ''
-    index = prev.index + 1
+    let index = prev.index + 1
     const block = {
         data: data,
         prev: prev,
