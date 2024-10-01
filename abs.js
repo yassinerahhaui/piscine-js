@@ -1,4 +1,4 @@
 const isPositive = (num) => num > 0;
-const abs = (num) => isPositive(num) ? num : -num;
+const abs = (num) => num >= 0 ? num : -num;
 
-console.log(isPositive(0));
+// console.log(isPositive(0));
