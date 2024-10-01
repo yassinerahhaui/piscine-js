@@ -63,11 +63,8 @@ const arrToObj = (arr) => {
 }
 const strToObj = (str) => {
     const obj = {}
-    let index = 0
-    for (let item of str.split()) {
-        obj[index] = item
-        index++
+    for (let num = 0;num < str.length;num++) {
+        obj[num] = str[num];
     }
     return obj
 }
-console.log(setToStr(new Set([1, 4, 3])));
