@@ -19,6 +19,9 @@ const multiply = (a, b) => {
 }
 const divide = (a, b) => {
     a = abs(a); b = abs(b);
+    if (a < b) {
+        return 0
+    }
     let result = a;
     let i = b
     if (a === b) { return 1 }
