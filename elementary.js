@@ -18,16 +18,16 @@ const multiply = (a, b) => {
     return result
 }
 const divide = (a, b) => {
-    a = abs(a); b = abs(b);
+    a = abs(a);
+    b = abs(b);
     if (a < b) {
         return 0
     }
-    let result = a;
-    let i = b
     if (a === b) { return 1 }
-    while (i > b) {
-        result -= a
-        i--
+    let result = 0
+    while(a >= b) {
+        a -= b
+        result++
     }
     return result
 }
@@ -41,6 +41,6 @@ const modulo = (a, b) => {
     }
 }
 
-console.log(multiply(123, -22));
-// console.log(divide(5, -5));
+// console.log(multiply(123, -22));
+console.log(divide(78, 34));
 // console.log(modulo(5, 2));
