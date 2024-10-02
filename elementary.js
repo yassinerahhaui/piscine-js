@@ -1,8 +1,8 @@
 const abs = (num) => num >= 0 ? num : -num;
 const multiply = (a, b) => {
     a, b = abs(a), abs(b);
-    let result = a;
-    let i = 1
+    let result = 0;
+    let i = 0
     while (i < b) {
         result += a
         i++
