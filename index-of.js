@@ -10,11 +10,12 @@ const indexOf = (arr, value, index = 0) => {
     return -1
 }
 
-const lastIndexOf = (arr, value) => {
+const lastIndexOf = (arr, value, start = 0) => {
     let index = -1;
     let count = 0
     for (let item of arr) {
-        if (item === value) index = count
+        if (count > start) return index
+            if (item === value) index = count
         count++
     }
     return index
