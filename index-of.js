@@ -1,0 +1,26 @@
+const indexOf = (arr, value, index = 0) => {
+    let i = 0
+    for (let item of arr) {
+        if (item === value && i >= index) return i
+        i++
+    }
+    return -1
+}
+const lastIndexOf = (arr, value) => {
+    let index = -1;
+    let count = 0
+    for (let item of arr) {
+        if (item === value) index = count
+        count++ 
+    }
+    return index
+}
+const includes = (arr, value) => {
+    for (let item of arr) {
+        if (item === value) return true
+    }
+    return false
+}
+// console.log(indexOf(["hi","hello", "10", "2", "10"],"10",1));
+// console.log(lastIndexOf(["hi","hello", "10", "2", "10"],"10"));
+// console.log(includes(["hi","hello", "10", "2", "10"],"102"));
