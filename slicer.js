@@ -1,11 +1,11 @@
 const slice = (item, start, end = 0) => {
     if (start < 0) {
         start = -start
-        start = item.len - start
+        start = item.len - (start + 1)
     }
     if (end < 0) {
         end = -end
-        end = item.len - end
+        end = item.len - (end + 1)
     }
     if (end === 0) end = item.length - 1
     let arr = []
