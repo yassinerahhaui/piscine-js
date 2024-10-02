@@ -1,8 +1,11 @@
 const slice = (item, start, end = 0) => {
-    try {
-        if (typeof item != "string" && !Array.isArray(item)) throw "item not valid"
-    } catch(err) {
-        console.log(err);
+    if (start < 0) {
+        start = -start
+        start = item.len - start
+    }
+    if (end < 0) {
+        end = -end
+        end = item.len - end
     }
     if (end === 0) end = item.length - 1
     let arr = []
