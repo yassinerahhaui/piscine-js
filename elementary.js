@@ -38,7 +38,7 @@ const divide = (a, b) => {
 }
 const modulo = (a, b) => {
     let negative = false
-    if (b >= 0 && a < 0) {
+    if (a < 0) {
         negative = true
     }
     a = abs(a); b = abs(b);
@@ -57,3 +57,4 @@ const modulo = (a, b) => {
 // console.log(divide(123, -22));
 console.log(modulo(-123, 22));
 console.log(modulo(123, -22));
+console.log(modulo(-123, -22));
