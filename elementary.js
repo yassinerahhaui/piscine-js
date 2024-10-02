@@ -18,6 +18,10 @@ const multiply = (a, b) => {
     return result
 }
 const divide = (a, b) => {
+    let negative = false
+    if (a >= 0 && b < 0 || b >= 0 && a < 0) {
+        negative = true
+    }
     a = abs(a);
     b = abs(b);
     if (a < b) {
@@ -29,6 +33,7 @@ const divide = (a, b) => {
         a -= b
         result++
     }
+    negative ? result = -result : result
     return result
 }
 const modulo = (a, b) => {
@@ -42,5 +47,5 @@ const modulo = (a, b) => {
 }
 
 // console.log(multiply(123, -22));
-console.log(divide(78, 34));
+console.log(divide(123, -22));
 // console.log(modulo(5, 2));
