@@ -1,6 +1,9 @@
 const abs = (num) => num >= 0 ? num : -num;
 const multiply = (a, b) => {
-    // a = abs(a); b = abs(b);
+    if (a < 0 && b < 0) {
+        a = abs(a)
+        b = abs(b)
+    }
     if (a > b) {
         let s = a;
         a = b;
