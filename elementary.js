@@ -37,9 +37,16 @@ const divide = (a, b) => {
     return result
 }
 const modulo = (a, b) => {
+    let negative = false
+    if (a >= 0 && b < 0 || b >= 0 && a < 0) {
+        negative = true
+    }
     a = abs(a); b = abs(b);
     while (true) {
         if (a < b) {
+            if (negative) {
+                return -a
+            }
             return a
         }
         a -= b
