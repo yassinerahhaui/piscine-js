@@ -55,6 +55,6 @@ const modulo = (a, b) => {
 
 // console.log(multiply(123, -22));
 // console.log(divide(123, -22));
-console.log(modulo(-123, 22));
-console.log(modulo(123, -22));
-console.log(modulo(-123, -22));
+// console.log(modulo(-123, 22));
+// console.log(modulo(123, -22));
+// console.log(modulo(-123, -22));
