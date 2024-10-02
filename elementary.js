@@ -1,6 +1,11 @@
 const abs = (num) => num >= 0 ? num : -num;
 const multiply = (a, b) => {
-    a = abs(a); b = abs(b);
+    // a = abs(a); b = abs(b);
+    if (a > b) {
+        let s = a;
+        a = b;
+        b = s;
+    }
     let result = 0;
     let i = 0
     while (i < b) {
@@ -30,6 +35,6 @@ const modulo = (a, b) => {
     }
 }
 
-// console.log(multiply(34, 78));
+console.log(multiply(123, -22));
 // console.log(divide(5, -5));
 // console.log(modulo(5, 2));
