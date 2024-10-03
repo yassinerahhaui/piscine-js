@@ -27,13 +27,14 @@ const split = (str, sep) => {
         let item = slice(str, i, i + ln)
         if (item === sep) {
             let res = slice(str, start, i)
+            // console.log(res);
             result = [...result, res]
             start = i + ln
             item = ""
         }
     }
     let res = slice(str, start)
-    result = [...result, res]
+    if (res !== "") result = [...result, res]
     return result
 }
 const join = (arr, sep) => {
@@ -48,3 +49,4 @@ const join = (arr, sep) => {
 // console.log(split('ggg - ddd - b', ' - '));
 // console.log(split("a,q,s,x",","));
 // console.log(split('a b c', ' '));
+console.log(split('rrrr', 'rr'));
