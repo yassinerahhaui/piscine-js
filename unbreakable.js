@@ -42,6 +42,6 @@ const join = (arr, sep) => {
     }
     return result
 }
-console.log(join(["1","1","1","1",],","));
-console.log(split("a,q,s,x",","));
-console.log(split('a b c', ' '));
+// console.log(join(["1","1","1","1",],","));
+// console.log(split("a,q,s,x",","));
+// console.log(split('a b c', ' '));
