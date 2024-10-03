@@ -1,4 +1,4 @@
-// import { abs } from "./abs.js";
+const abs = (num) => num >= 0 ? num : -num;
 
 const multiply = (a, b) => {
     if (a < 0 && b < 0) {
@@ -54,8 +54,8 @@ const modulo = (a, b) => {
     }
 }
 
-console.log(multiply(123, -22));
-console.log(divide(123, -22));
-console.log(modulo(-123, 22));
-console.log(modulo(123, -22));
-console.log(modulo(-123, -22));
+// console.log(multiply(123, -22));
+// console.log(divide(123, -22));
+// console.log(modulo(-123, 22));
+// console.log(modulo(123, -22));
+// console.log(modulo(-123, -22));
