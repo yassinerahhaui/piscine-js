@@ -2,11 +2,10 @@ const split = (str, sep) => {
     let result = []
     let item = ""
     for (let char of str) {
+        item += char
         if (char === sep) {
-            result = [...result,item]
+            result = [...result,item-sep]
             item = ""
-        } else {
-            item += char
         }
     }
     item !== "" ? result = [...result,item] : ""
