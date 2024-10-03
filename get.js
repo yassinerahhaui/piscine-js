@@ -9,5 +9,5 @@ const get = (src, path) => {
 }
 
 // console.log(get({ key: 'value' }, 'key'));
-console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
+// console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
 // console.log(get({ nested: { key: 'value' } }, 'nested.key'));
