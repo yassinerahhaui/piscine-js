@@ -1,5 +1,6 @@
 const split = (str, sep) => {
     let result = []
+    if (sep == '') return Array.from(str)
     let start = 0
     let ln = sep.length
     for (let i = 0; i <= str.length; i++) {
@@ -13,7 +14,7 @@ const split = (str, sep) => {
     }
     return result
 }
-const join = (arr, sep) => {
+const join = (arr, sep = ',') => {
     let result = ""
     let index = 1
     for (let item of arr) {
