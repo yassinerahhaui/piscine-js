@@ -17,4 +17,4 @@ const slice = (item, start, end = 0) => {
     }
     return arr
 }
-console.log(slice('abcdef', -2));
+// console.log(slice('abcdef', -2));
