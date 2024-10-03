@@ -5,8 +5,9 @@ const split = (str, sep) => {
         if (char === sep) {
             result = [...result,item]
             item = ""
-        } 
-        item += char
+        } else {
+            item += char
+        }
     }
     item !== "" ? result = [...result,item] : ""
     return result
