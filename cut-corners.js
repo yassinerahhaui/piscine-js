@@ -64,15 +64,21 @@ const floor = (num) => {
     return negative ? -num : num
 }
 const trunc = (num) => {
-    let res = modulo(num, 1)
+    let res = 0
+    if (num > 68719476735) {
+        num -= 68719476735;
+        res += 68719476735;
+    }
     let negative = false
-    if (res < 0) {
+    if (num < 0) {
         negative = true
-        res = -res
         num = -num
     }
-    num -= res
-    return negative ? -num : num
+    while(num>=1){
+        num -= 1
+        res++
+    }
+    return negative ? -res : res
 }
 
 // const nums = [3.7, -3.7, 3.1, -3.1, 0]
