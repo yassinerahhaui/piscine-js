@@ -16,21 +16,23 @@ const slice = (item, start, end = item.length) => {
     for (let item of arr) {
         result += item
     }
-    return item
+    return arr
 }
 const split = (str, sep) => {
     let result = []
-    let end = 0
-    let start = 0 
-    for (let i = 0; i < str.length - (sep.length-1); i++) {
-        end = i + sep.length
-        if (slice(str, i, end) === sep) {
-            result = [...result, slice(str,i-1,end)]
+    let start = 0
+    let ln = sep.length
+    for (let i = 0; i + ln <= str.length; i++) {
+        let item = slice(str, i, i + ln)
+        if (item[0] === sep) {
+            let res = slice(str, start, i)
+            result = [...result, res[0]]
+            start = i + ln
             item = ""
         }
-        start = i
     }
-    result = [...result, slice(str,start,end)]
+    let res = slice(str, start)
+    result = [...result, res[0]]
     return result
 }
 const join = (arr, sep) => {
@@ -44,4 +46,4 @@ const join = (arr, sep) => {
 }
 // console.log(join(["1","1","1","1",],","));
 // console.log(split("a,q,s,x",","));
-// console.log(split('a b c', ' '));
+console.log(split('a b c', ' '));
