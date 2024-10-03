@@ -22,9 +22,9 @@ const join = (arr, sep) => {
     }
     return result
 }
-console.log(split('rrirr', 'rr'));
-console.log(split('ggg - ddd - b', ' - '));
-console.log(split("a,q,s,x",","));
-console.log(split('a b c', ' '));
-console.log(split('rrrr', 'rr'));
-console.log(split('ee,ff,g,', ','));
+// console.log(split('rrirr', 'rr'));
+// console.log(split('ggg - ddd - b', ' - '));
+// console.log(split("a,q,s,x",","));
+// console.log(split('a b c', ' '));
+// console.log(split('rrrr', 'rr'));
+// console.log(split('ee,ff,g,', ','));
