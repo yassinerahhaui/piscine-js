@@ -20,15 +20,17 @@ const slice = (item, start, end = item.length) => {
 const split = (str, sep) => {
     let result = []
     let item = ""
-    for (let i = 0; i < str.length - sep.length; i++) {
-        if (slice(str, i, i + sep.length) === sep) {
-            result = [...result, item]
+    let end = 0
+    let start = 0 
+    for (let i = 0; i < str.length - (sep.length-1); i++) {
+        end = i + sep.length
+        if (slice(str, i, end) === sep) {
+            result = [...result, slice(str,i-1,end)]
             item = ""
-        } else {
-            item += char
         }
+        start = i
     }
-    item !== "" ? result = [...result, item] : ""
+    result = [...result, slice(str,start,end)]
     return result
 }
 const join = (arr, sep) => {
@@ -40,5 +42,6 @@ const join = (arr, sep) => {
     }
     return result
 }
-// console.log(join(["1","1","1","1",],","));
-// console.log(split("a,q,s,x",","));
+console.log(join(["1","1","1","1",],","));
+console.log(split("a,q,s,x",","));
+console.log(split('a b c', ' '));
