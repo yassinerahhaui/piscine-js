@@ -10,7 +10,8 @@ const nasa = (num) => {
         } else {
             result += String(i)
         }
+        if (i < num) result += " ";
     }
     return result
 }
-// console.log(nasa(20));
+console.log(nasa(15));
