@@ -1,4 +1,4 @@
-import { abs } from "./abs.js";
+// import { abs } from "./abs.js";
 
 const multiply = (a, b) => {
     if (a < 0 && b < 0) {
