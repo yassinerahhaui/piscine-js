@@ -1,10 +1,10 @@
 const get = (src,path) => {
-    // let pathKey = path.split(".")[1]
+    let pathKey = path.split(".")
     let result = ""
-    for (let [key,val] of Object.entries(src)) {
-        if (key === path) result = val
+    for (let key of pathKey) {
+        if (src[key] !== "undefined") result = src[key]
     }
     return result
 }
 
-// console.log(get({ key: 'value' }, 'key'));
+console.log(get({ key: 'value' }, 'key'));
