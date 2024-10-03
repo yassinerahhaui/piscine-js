@@ -23,7 +23,9 @@ const cutLast = (str) => slice(str, 0, -2)
 const cutFirstLast = (str) => slice(str,2,-2)
 const keepFirst = (str) => slice(str,0,2)
 const keepLast = (str) => slice(str,-2)
-const keepFirstLast = (str) => slice(str,0, 2) + slice(str,-2)
+const keepFirstLast = (str) => {
+    return str.length <= 4 ? str : slice(str,0, 2) + slice(str,-2)
+}
 // console.log(cutFirst("hello"));
 // console.log(cutLast("hello"));
 // console.log(cutFirstLast("hello"));
