@@ -8,7 +8,6 @@ const RNA = (str) => {
 }
 
 const DNA = (str) => {
-    
     const dnaToRna = { C: 'G', G: 'C', A: 'T', U: 'A' }
     let result = ""
     for (let c of str) {
