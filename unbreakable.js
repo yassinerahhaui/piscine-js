@@ -12,14 +12,14 @@ const slice = (item, start, end = item.length) => {
     for (let i = 0; i < item.length; i++) {
         i >= start && i < end ? arr.push(item[i]) : ''
     }
-    if (typeof item === "string") {
-        return arr.join("")
+    let result = ""
+    for (let item of arr) {
+        result += item
     }
-    return arr
+    return item
 }
 const split = (str, sep) => {
     let result = []
-    let item = ""
     let end = 0
     let start = 0 
     for (let i = 0; i < str.length - (sep.length-1); i++) {
