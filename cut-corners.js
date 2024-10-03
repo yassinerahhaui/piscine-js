@@ -1,3 +1,4 @@
+const abs = (num) => num >= 0 ? num : -num;
 const modulo = (a, b) => {
     let negative = false
     if (a < 0) {
@@ -30,6 +31,7 @@ const round = (num) => {
     return negative ? -num : num
 }
 const ceil = (num) => {
+    if (num === 0) return 0
     let res = modulo(num, 1)
     let negative = false
     if (res < 0) {
@@ -73,8 +75,8 @@ const trunc = (num) => {
     return negative ? -num : num
 }
 
-// const nums = [3.7, -3.7, 3.1, -3.1]
-// console.log(nums.map(round))
-// console.log(nums.map(floor))
-// console.log(nums.map(trunc))
-// console.log(nums.map(ceil))
+const nums = [3.7, -3.7, 3.1, -3.1, 0]
+console.log(nums.map(round))
+console.log(nums.map(floor))
+console.log(nums.map(trunc))
+console.log(nums.map(ceil))
