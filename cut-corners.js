@@ -1,0 +1,80 @@
+const modulo = (a, b) => {
+    let negative = false
+    if (a < 0) {
+        negative = true
+    }
+    a = abs(a); b = abs(b);
+    while (true) {
+        if (a < b) {
+            if (negative) {
+                return -a
+            }
+            return a
+        }
+        a -= b
+    }
+}
+
+const round = (num) => {
+    let res = modulo(num, 1)
+    let negative = false
+    if (res < 0) {
+        negative = true
+        res = -res
+        num = -num
+    }
+    num -= res
+    if (res >= 0.5) {
+        num += 1
+    }
+    return negative ? -num : num
+}
+const ceil = (num) => {
+    let res = modulo(num, 1)
+    let negative = false
+    if (res < 0) {
+        negative = true
+        res = -res
+        num = -num
+        num -= res
+    } else {
+        num -= res
+        num++
+    }
+
+
+    return negative ? -num : num
+}
+const floor = (num) => {
+    let res = modulo(num, 1)
+    let negative = false
+    if (res < 0) {
+        negative = true
+        res = -res
+        num = -num
+        num -= res
+        num++
+    } else {
+        num -= res
+    }
+
+
+    return negative ? -num : num
+}
+const trunc = (num) => {
+    let res = modulo(num, 1)
+    let negative = false
+    if (res < 0) {
+        negative = true
+        res = -res
+        num = -num
+    }
+    num -= res
+    return negative ? -num : num
+}
+
+// const nums = [3.7, -3.7, 3.1, -3.1]
+// console.log(nums.map(round))
+// console.log(nums.map(floor))
+// console.log(nums.map(trunc))
+// console.log(nums.map(ceil))
