@@ -1,11 +1,11 @@
 const slice = (item, start, end = 0) => {
     if (start < 0) {
         start = -start
-        start = item.len - (start + 1)
+        start = item.length - start
     }
     if (end < 0) {
         end = -end
-        end = item.len - (end + 1)
+        end = item.length - end
     }
     if (end === 0) end = item.length - 1
     let arr = []
@@ -17,3 +17,4 @@ const slice = (item, start, end = 0) => {
     }
     return arr
 }
+console.log(slice('abcdef', -2));
