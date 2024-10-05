@@ -16,7 +16,7 @@ const findExpression = (num) => {
         res += ` ${add4}`
         return findExpression(num);
     } 
-    return String(num)
+    return num
 }
 // console.log(findExpression(8));
 // console.log(findExpression(14));
