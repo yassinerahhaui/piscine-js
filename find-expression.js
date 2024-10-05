@@ -1,9 +1,9 @@
 let res = "1"
-// const add4 = "+4"
-// const mul2 = "*2"
+const add4 = "+4"
+const mul2 = "*2"
 let sum = 1
 const findExpression = (num) => {
-    if (num%2 === 1) return undefined;
+    if (num%2 === 1) return num;
     if (sum >= num) {
         return res
     }
@@ -16,6 +16,7 @@ const findExpression = (num) => {
         res += ` ${add4}`
         return findExpression(num);
     } 
-    // return findExpression(num);
+    return String(num)
 }
 // console.log(findExpression(8));
+console.log(findExpression(14));
