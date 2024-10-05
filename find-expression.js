@@ -1,7 +1,7 @@
 const findExpression = (num, res= "1", sum = 1) => {
-    if (num%2 === 1) return undefined;
+    if (num%2 === 1) return "undefined";
     if (sum > num) {
-        return undefined
+        return "undefined"
     }
     if (sum === num) return res;
     if ((sum * 2) < num) {
