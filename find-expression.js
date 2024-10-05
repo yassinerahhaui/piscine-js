@@ -14,5 +14,5 @@ const findExpression = (num, res= "1", sum = 1) => {
         return findExpression(num,res, sum);
     }
 }
-console.log(findExpression(8));
-console.log(findExpression(14));
+// console.log(findExpression(8));
+// console.log(findExpression(14));
