@@ -43,8 +43,6 @@ const ceil = (num) => {
         num -= res
         num++
     }
-
-
     return negative ? -num : num
 }
 const floor = (num) => {
