@@ -19,11 +19,11 @@ const isBefore = (arg1, arg2) => {
 const isFuture = (arg) => {
     if (typeof arg === "string") return false;
     let date = new Date(arg).getTime()
-    return (date > Date.now().getTime())
+    return (date > Date.now())
 }
 const isPast = (arg) => {
     if (typeof arg === "string") return false;
     let date = new Date(arg).getTime()
-    return (date < Date.now().getTime())
+    return (date < Date.now())
 }
 // console.log(isValid(1393804800000));
