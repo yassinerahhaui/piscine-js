@@ -31,10 +31,10 @@ const timeTravel = (date) => {
 // const time = Date.now() / 1000 / 60 / 60 / 24 / 365
 
 
-console.log(addWeek(new Date("2024-10-07")));
-console.log(timeTravel({
-    date: new Date('2020-05-12 23:25:22'),
-    hour: 21,
-    minute: 22,
-    second: 22,
-  }).toString());
+// console.log(addWeek(new Date("2024-10-07")));
+// console.log(timeTravel({
+//     date: new Date('2020-05-12 23:25:22'),
+//     hour: 21,
+//     minute: 22,
+//     second: 22,
+//   }).toString());
