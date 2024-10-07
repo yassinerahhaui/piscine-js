@@ -26,7 +26,7 @@ const timeTravel = (date) => {
     res.setHours(date.hour)
     res.setMinutes(date.minute)
     res.setSeconds(date.second)
-    return res.getTime()
+    return res
 }
 // const time = Date.now() / 1000 / 60 / 60 / 24 / 365
 
