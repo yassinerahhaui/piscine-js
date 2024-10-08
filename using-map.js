@@ -23,7 +23,7 @@ const tempForecasts = (arr) => arr.map(el => {
     let cel = el.temperature.split(' ').join('')
     let num = cel.split('°F')[0]
     let res = Math.floor(((num - 32) * 5) / 9)
-    return `${res}°Celsius in ${el.city}, ${el.state.toLowerCase()}`
+    return `${res}°Celsius in ${el.city}, ${upperCasingStates([el.state])}`
 })
 
 const toCapitalize = (str) => {
