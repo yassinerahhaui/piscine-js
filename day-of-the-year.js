@@ -6,4 +6,4 @@ const dayOfTheYear = (date) => {
     return days + (month/2)
 }
 
-// console.log(dayOfTheYear(new Date('1664-08-09')));
+console.log(dayOfTheYear(new Date('1664-08-09')));
