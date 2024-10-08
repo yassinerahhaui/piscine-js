@@ -1,9 +1,9 @@
 const dayOfTheYear = (date) => {
     let year = date.getFullYear()
     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-        date.setFullYear('2004')
+        date.setFullYear(2004)
     } else {
-        date.setFullYear('2005')
+        date.setFullYear(2005)
     }
     
     let month = date.getMonth()
@@ -16,6 +16,8 @@ const dayOfTheYear = (date) => {
     }
     return res
 }
+
+
 
 // console.log(dayOfTheYear(new Date('1664-08-09')));
 // console.log(dayOfTheYear(new Date('0001-01-01')));
