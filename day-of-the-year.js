@@ -2,7 +2,6 @@ const dayOfTheYear = (date) => {
     let startDay = date.getDate()
     let startMonth = date.getMonth()
     let startYear = date.getFullYear()
-    console.log(startYear);
     if (startDay === 0 && startMonth === 0 && startYear === 1) return 1;
     let month = date.getMonth()
     let day = date.getDate()
