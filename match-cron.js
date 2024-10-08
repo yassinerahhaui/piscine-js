@@ -12,7 +12,11 @@ const matchCron = (cron, date) => {
     if (cron[1] !== '*' && Number(cron[1]) !== dt.hour) return false;
     if (cron[2] !== '*' && Number(cron[2]) !== dt.dayOfMonth+1) return false;
     if (cron[3] !== '*' && Number(cron[3]) !== dt.month+1) return false;
-    if (cron[4] !== '*' && Number(cron[4]) !== dt.dayOfWeek+1) return false;
+    if (dt.dayOfWeek === 0 && cron[0] === '7') {
+
+    } else {
+        if (cron[4] !== '*' && Number(cron[4]) !== dt.dayOfWeek) return false;
+    }
 
     return true
 }
