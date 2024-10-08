@@ -1,22 +1,10 @@
-const dayOfTheYear = (date) => {
-    let year = date.getFullYear()
-    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-        date.setFullYear(2004)
-    } else {
-        date.setFullYear(2005)
-    }
-    
-    let month = date.getMonth()
-    let day = date.getDate()
-    let res = day
-    let daysofMonths = [31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30]
-    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) daysofMonths[1] = 29;
-    for (let i = 0; i < month; i++) {
-        res += daysofMonths[i]
-    }
-    return res
+function dayOfTheYear(date) {
+    let year = '2024';
+    date.setFullYear(2024)
+    let firstday = new Date(year + '-01-01').getTime();
+    let dif = (date.getTime() - firstday) / 86400000;
+    return dif+1;
 }
-
 
 
 // console.log(dayOfTheYear(new Date('1664-08-09')));
