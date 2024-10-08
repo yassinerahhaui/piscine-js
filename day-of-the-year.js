@@ -10,7 +10,7 @@ const dayOfTheYear = (date) => {
         count++
         if (count === month) break
     }
-    res += day+1
+    res += day
     return res
 }
 
