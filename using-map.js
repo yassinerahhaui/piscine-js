@@ -5,7 +5,7 @@ const upperCasingStates = arr => arr.map(str => toCapitalize(str))
 const fahrenheitToCelsius = (arr) => {
     return arr.map(el => {
         let num = el.split('°F')[0]
-        let cel = Math.round(((num - 32) * 5) / 9)
+        let cel = Math.floor(((num - 32) * 5) / 9)
         return `${cel}°C`
     })
 }
@@ -18,7 +18,7 @@ const trimTemp = (arr) => {
 const tempForecasts = (arr) => arr.map(el => {
     let cel = el.temperature.split(' ').join('')
     let num = cel.split('°F')[0]
-    let res = Math.round(((num - 32) * 5) / 9)
+    let res = Math.floor(((num - 32) * 5) / 9)
     return `${res}°Celsius in ${el.city}, ${el.state}`
 })
 
