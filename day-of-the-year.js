@@ -15,7 +15,7 @@ const dayOfTheYear = (date) => {
         if (count === month) break
     }
     res += day
-    if (diff === -60 && res >= 365) return 1
+    if (diff === -60 && date === new Date('0001-01-01')) return 1
     return res
 }
 
