@@ -1,13 +1,14 @@
-const dayOfTheYear = (date) => {
+const dayOfTheYear = (date) => {    
+    let month = date.getMonth()
+    let day = date.getDate()
     let res = 0
     let daysofMonths = [31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30]
     let year = date.getFullYear()
     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) daysofMonths[1] = 29;
     for (let i = 0; i < month; i++) {
-        res += daysofMonths[1]
+        res += daysofMonths[i]
     }
     res += day
-    // if (diff === -60 && date === new Date('0001-01-01')) return 1
     return res
 }
 
