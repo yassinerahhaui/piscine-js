@@ -1,4 +1,4 @@
-function dayOfTheYear(date) {
+const dayOfTheYear = (date) => {
     let year = '2024';
     date.setFullYear(2024)
     let firstday = new Date(year + '-01-01').getTime();
