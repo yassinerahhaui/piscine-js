@@ -11,7 +11,8 @@ const dayOfTheYear = (date) => {
         if (count === month) break
     }
     res += day
-    return res
+    return res === 366 ? 1 : res
 }
 
 console.log(dayOfTheYear(new Date('1664-08-09')));
+console.log(dayOfTheYear(new Date('0001-01-01')));
