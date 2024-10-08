@@ -1,5 +1,5 @@
-const isFriday = (date) => (date.getDays() === 5)
-const isWeekend = (date) => (date.getDays() === 0 || date.getDay() === 6)
+const isFriday = (date) => (date.getDay() === 5)
+const isWeekend = (date) => (date.getDay() === 0 || date.getDay() === 6)
 const isLeapYear = (date) => (date.getFullYear() % 4 === 0)
 const isLastDayOfMonth = (date) => {
     let month = date.getMonth()
