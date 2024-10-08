@@ -1,10 +1,13 @@
 const dayOfTheYear = (date) => {
+    let startDate = new Date('0001-01-01')
+    if (startDate === date) return 1;
     let month = date.getMonth()
     let day = date.getDate()
-    let daysofMonths = [31,28,31,30,31,30,31,30,31,30,31,30]
     let count = 0
     let res = 0
-    if (i%4 === 0 && (i%100 !== 0 || i%400 === 0)) daysofMonths[1] = 29;
+    let daysofMonths = [31,28,31,30,31,30,31,30,31,30,31,30]
+    let year = date.getFullYear()
+    if (year%4 === 0 && (year%100 !== 0 || year%400 === 0)) daysofMonths[1] = 29;
     for (let d of daysofMonths) {
         res += d
         count++
@@ -15,4 +18,4 @@ const dayOfTheYear = (date) => {
 }
 
 // console.log(dayOfTheYear(new Date('1664-08-09')));
-// console.log(dayOfTheYear(new Date('0001-01-01')));
+console.log(dayOfTheYear(new Date('0001-01-01')));
