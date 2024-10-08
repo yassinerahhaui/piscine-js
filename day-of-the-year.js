@@ -1,6 +1,6 @@
 const dayOfTheYear = (date) => {
-    let startDate = new Date('0001-01-01')
-    if (startDate === date) return 1;
+    let startDate = "Sun Dec 31 0000 23:29:40 GMT-0030 (GMT+01:00)"
+    if (startDate === date.toString()) return 1;
     let month = date.getMonth()
     let day = date.getDate()
     let count = 0
