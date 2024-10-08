@@ -1,5 +1,5 @@
 const dayOfTheYear = (date) => {
-    const d = new Date("0001-01-01T00:00:00Z");
+    const d = new Date(date);
     if (d === date) return 1;
     let month = date.getMonth()
     let day = date.getDate()
