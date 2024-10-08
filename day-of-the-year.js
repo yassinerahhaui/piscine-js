@@ -1,7 +1,7 @@
 const dayOfTheYear = (date) => {
     let year = date.getFullYear()
     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-        date.setFullYear('2000')
+        date.setFullYear('2004')
     } else {
         date.setFullYear('2005')
     }
