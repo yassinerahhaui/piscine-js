@@ -2,6 +2,7 @@ const dayOfTheYear = (date) => {
     let month = date.getMonth()
     let days = month * 30
     days += date.getDate()
+    if (date.getFullYear()%4 === 0) days++
     if (month % 2 === 1) month++;
     return parseInt(days + (month/2))
 }
