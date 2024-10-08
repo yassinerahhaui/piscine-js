@@ -11,7 +11,11 @@ const fahrenheitToCelsius = (arr) => {
 }
 const trimTemp = (arr) => {
     return arr.map(el => {
-        return { city: el.city,region: el.region, temperature: el.temperature.split(' ').join('') }
+        return { city: el.city,
+            state: el.state,
+            region: el.region,
+            temperature: el.temperature.split(' ').join('')
+        }
     })
 }
 
