@@ -4,14 +4,14 @@ const dayOfTheYear = (date) => {
     let daysofMonths = [31,28,31,30,31,30,31,30,31,30,31,30]
     let count = 0
     let res = 0
-    if (date.getFullYear()%4 === 0) daysofMonths[1] = 29;
+    if (i%4 === 0 && (i%100 !== 0 || i%400 === 0)) daysofMonths[1] = 29;
     for (let d of daysofMonths) {
         res += d
         count++
         if (count === month) break
     }
     res += day
-    return res >= 365 ? 1 : res
+    return res
 }
 
 // console.log(dayOfTheYear(new Date('1664-08-09')));
