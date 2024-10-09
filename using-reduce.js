@@ -1,9 +1,10 @@
-const adder = (arr) => arr.reduce((total,current)=> {
+const adder = (arr,initial) => arr.reduce((total,current)=> {
+    if (isNaN(total)) total = 0;
     return total + current
-})
-const sumOrMul = (arr)=> arr.reduce((total,num)=> {
+},initial)
+const sumOrMul = (arr,initial)=> arr.reduce((total,num)=> {
     return num%2 === 0 ? total * num : total + num
-})
+},initial)
 const funcExec = (arr,initial) => arr.reduce((total, func)=> func(total),initial)
 
 let arr = [1, 2, 3, 4]
