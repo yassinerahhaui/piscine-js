@@ -1,5 +1,5 @@
 const adder = (arr,initial) => arr.reduce((total,current)=> {
-    return total + current
+    return Number(total) + Number(current)
 },initial)
 const sumOrMul = (arr,initial)=> arr.reduce((total,num)=> {
     return num%2 === 0 ? total * num : total + num
