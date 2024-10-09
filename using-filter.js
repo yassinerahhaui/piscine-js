@@ -7,10 +7,7 @@ const filter5Vowels = (arr) => arr.filter(el => {
     return str.length >= 5
 })
 
-const filter1DistinctVowel = (arr) => {
-    let filtredArr = arr.filter(el => /[aeiou]+/.test(el))
-    return filtredArr.map(el => el.match(/[aeiou]/g).join('')[0])
-}
+const filter1DistinctVowel = (arr) => arr.filter(el => /[aeiou]+/.test(el))
 
 const multiFilter = (arr) => arr.filter(el => {
     return (el.capital.length >= 8 && /^[^aeiou]/gi.test(el.name) && /[^aeiou]$/gi.test(el.tag) && el.region != "South")
