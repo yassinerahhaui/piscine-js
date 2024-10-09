@@ -16,7 +16,7 @@ const filter1DistinctVowel = (arr) => arr.filter(el => {
     return true
 })
 
-const multiFilter = (arr) => arr.filter(el => (el.capital.length >= 8 && /^[^aeiou]/gi.test(el.name) && /[^aeiou]$/gi.test(el.tag) && el.region !== "South"))
+const multiFilter = (arr) => arr.filter(el => (el.capital.length >= 8 && /^[^aeiou]/gi.test(el.name) && /[aeiou]+/gi.test(el.tag) && el.region !== "South"))
 let ar = [
     { tag: 'CA', name: 'California', capital: 'Sacramento', region: 'West' },
     { tag: 'HI', name: 'Hawaii', capital: 'Honolulu', region: 'West' },
