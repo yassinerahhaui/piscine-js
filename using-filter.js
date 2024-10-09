@@ -9,9 +9,9 @@ const filter5Vowels = (arr) => arr.filter(el => {
 
 const filter1DistinctVowel = (arr) => arr.filter(el => {
     if (!/[aeiou]+/.test(el)) return false
-    let vowels = el.match(/[aeiou]*/g)
+    let vowels = el.match(/[aeiou]+/ig).join('').toLowerCase()
     for (let v of vowels) {
-        if (vowels[0]!== v) return false;
+        if (vowels[0]!== v && v !== "") return false;
     }
     return true
 })
@@ -19,6 +19,16 @@ const filter1DistinctVowel = (arr) => arr.filter(el => {
 const multiFilter = (arr) => arr.filter(el => {
     return (el.capital.length >= 8 && /^[^aeiou]/gi.test(el.name) && /[^aeiou]$/gi.test(el.tag) && el.region != "South")
 })
+// let ar = [
+//     'Alabama',
+//     'Alaska',
+//     'Arkansas',
+//     'Kansas',
+//     'Maryland',
+//     'Mississippi',
+//     'New Jersey',
+//     'Tennessee',
+//   ]
 
-// console.log(filter1DistinctVowel(["Alabaema", "gggggg"]));
+// console.log(filter1DistinctVowel(ar));
 // console.log(strREg.test(str));

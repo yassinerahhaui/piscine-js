@@ -31,39 +31,3 @@ const toCapitalize = (str) => {
     let res = arr.map(el => `${el[0].toUpperCase()}${el.slice(1)}`)
     return res.join(' ')
 }
-
-// console.log(tempForecasts([
-//     {
-//         city: 'Pasadena',
-//         temperature: ' 101 °F',
-//         state: 'california',
-//         region: 'West',
-//     },
-// ]));
-// -> ['38°Celsius in Pasadena, California']
-
-/* console.log(trimTemp([
-    { city: 'Los Angeles', temperature: '  101 °F   ' },
-    { city: 'San Francisco', temperature: ' 84 ° F   ' },
-])) *//* -> [
-    { city: 'Los Angeles', temperature: '101°F' },
-    { city: 'San Francisco', temperature: '84°F' },
-  ] */
-// console.log(toCapitalize("hello world"));
-
-
-// console.log(citiesOnly([
-//     {
-//         city: 'Los Angeles',
-//         temperature: '  101 °F   ',
-//     },
-//     {
-//         city: 'San Francisco',
-//         temperature: ' 84 ° F   ',
-//     },
-// ]));
-
-// console.log(upperCasingStates(['alabama', 'new jersey']));
-
-// console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F']));
-// -> ['20°C', '15°C', '-4°C']

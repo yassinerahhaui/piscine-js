@@ -21,3 +21,5 @@ const formatDate = (dd, mm , yyyy) => {
     return `${day}-${month}-${year}`
 }
 // console.log(firstDayWeek(1,"0001"));
+// console.log(firstDayWeek(52, '1000'));
+// console.log(firstDayWeek(1, '1000'));
