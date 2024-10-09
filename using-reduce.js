@@ -1,13 +1,12 @@
-const adder = (arr,initial) => arr.reduce((total,current)=> {
-    if (isNaN(total)) total = 0;
+const adder = (arr = [],initial = 0) => arr.reduce((total,current)=> {
     return total + current
 },initial)
-const sumOrMul = (arr,initial)=> arr.reduce((total,num)=> {
+const sumOrMul = (arr = [],initial = 0)=> arr.reduce((total,num,index,arr)=> {
     return num%2 === 0 ? total * num : total + num
 },initial)
-const funcExec = (arr,initial) => arr.reduce((total, func)=> func(total),initial)
+const funcExec = (arr = [],initial= 0) => arr.reduce((total, func)=> func(total),initial)
 
-let arr = [1, 2, 3, 4]
+// let arr = [1, 2, 3, 4]
 
-console.log(adder(arr));
+// console.log(adder([]));
 // console.log(sumOrMul(arr));
