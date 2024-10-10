@@ -8,7 +8,7 @@ const fold = (arr = [], func, init = 0) => {
 const foldRight = (arr = [], func, init = 0) => {
     let total = init
     let start = arr.length - 2
-    init === 0 ? total = arr[0] : start = arr.length - 2
+    init === 0 ? total = arr[0] : start = arr.length - 1
     for (let i = start; i > 0; i--) {
         total = func(total, arr[i], i, arr)
     }
