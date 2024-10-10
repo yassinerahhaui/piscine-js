@@ -18,6 +18,9 @@ const flat = (arr, num=1) => {
 // const arr = [1,2,3,4]
 // console.log(map(arr, (i)=> i+1));
 const flatMap = (arr, func) => flat(map(arr, func))
+// const arr1 = ["it's Sunny in", "", "California"];
 
+// arr1.map((x) => x.split(" "));
+// // [["it's","Sunny","in"],[""],["California"]]
 
-// console.log(flatMap([[1,2],[3,4],[5,6]], (i) => i+1));
+// console.log(flatMap(arr1, (i) => i.split(" ")));
