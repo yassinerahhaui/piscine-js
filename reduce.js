@@ -6,11 +6,11 @@ const fold = (arr = [], func, init = 0) => {
     return total
 }
 const foldRight = (arr = [], func, init = 0) => {
-    arr.reverse()
+    arr.reverse()|| []
     return fold(arr, func, init)
 }
 const reduce = (arr=[], func) => {
-    let total = arr[0] || 0
+    let total = arr[0] || []
     for (let i = 1; i < arr.length; i++) {
         total = func(total, arr[i], i, arr)
     }
@@ -23,4 +23,4 @@ const reduceRight = (arr=[], func) => {
 
 // const arr = [1,2,3]
 
-// console.log(reduceRight(arr,(t,i)=> {return t+i}));
+// console.log(foldRight([],(t,i)=> {return t+i}));
