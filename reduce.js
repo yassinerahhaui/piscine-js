@@ -21,7 +21,7 @@ const reduce = (arr=[], func) => {
 }
 const reduceRight = (arr=[], func) => {
     let total = arr[arr.length-1] || []
-    for (let i = arr.length-1; i > 0; i--) {
+    for (let i = arr.length-2; i > 0; i--) {
         total = func(total, arr[i], i, arr)
     }
     return total
