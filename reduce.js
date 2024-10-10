@@ -30,7 +30,7 @@ const reduce = (arr = [], func) => {
     return total
 }
 const reduceRight = (arr = [], func) => {
-    if (arr.length < 1 && init === undefined) {
+    if (arr.length < 1 && arr === undefined) {
         throw new Error('Array error: Cannot reduce an empty array!');
     }
     for (let i = arr.length; i >= 0; i--) {
