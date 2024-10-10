@@ -17,6 +17,9 @@ const flat = (arr, num=1) => {
 }
 // const arr = [1,2,3,4]
 // console.log(map(arr, (i)=> i+1));
-const flatMap = (arr, func) => map(flat(arr),func)
+const flatMap = (arr, func) => {
+    let newarr = flat(arr)
+    return map(newarr, func)
+}
 
-// console.log(flatMap([[1,2],[3,4],[5,6]], (i) => i+1));
+console.log(flatMap([[1,2],[3,4],[5,6]], (i) => i+1));
