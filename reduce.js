@@ -29,10 +29,9 @@ const reduce = (arr = [], func) => {
     }
     return total
 }
-const reduceRight = (arr = [], func, init= 0) => {
+const reduceRight = (arr = [], func) => {
     let total;
     let start = arr.length - 1;
-
     if (init !== undefined) {
         total = init;
     } else if (arr.length > 0) {
@@ -41,10 +40,10 @@ const reduceRight = (arr = [], func, init= 0) => {
     } else {
         return undefined;
     }
-    for (let i = arr.length - 2; i >= 0; i--) {
-        total = func(total, arr[i], i, arr)
+    for (let i = start; i >= 0; i--) {
+        total = func(total, arr[i], i, arr);
     }
-    return total
+    return total;
 }
 
 // const adder = (a, b) => a + b
