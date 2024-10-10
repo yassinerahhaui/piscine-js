@@ -1,9 +1,18 @@
-const longWords = (arr) => {
-    return arr.map(el=> (typeof el === 'string' && el.length >= 5)).reduce((total,cur)=> {
-        if (!cur || !total) total = false
-        return total
-    })
-}
+const longWords = (arr = []) => arr.map(el=> {
+    return (typeof el === 'string' && el.length >= 5)
+}).reduce((total,cur)=> {
+    if (!cur || !total) total = false
+    return total
+})
 
-// let arr = ["12345","12345","12345","12345"]
-// console.log(longWords(arr));
+
+const oneLongWord = (arr = []) => arr.reduce((total,el)=> {
+    if (typeof el === "string" && el.length >= 10) total = true;
+    return total
+},false)
+
+
+const noLongWords = (arr = []) => arr.reduce((total,el)=> {
+    if (typeof el === "string" && el.length >= 7) total = false
+    return total
+},true)
