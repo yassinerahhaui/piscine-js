@@ -9,7 +9,7 @@ const foldRight = (arr = [], func, init = 0) => {
     let total = init
     let start = arr.length - 2
     init === 0 ? total = arr[0] : start = arr.length - 1
-    for (let i = start; i > 0; i--) {
+    for (let i = start; i >= 0; i--) {
         total = func(total, arr[i], i, arr)
     }
     return total
@@ -24,7 +24,7 @@ const reduce = (arr = [], func) => {
 }
 const reduceRight = (arr = [], func) => {
     let total = arr[arr.length - 1] || []
-    for (let i = arr.length - 2; i > 0; i--) {
+    for (let i = arr.length - 2; i >= 0; i--) {
         total = func(total, arr[i], i, arr)
     }
     return total
