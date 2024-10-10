@@ -29,17 +29,11 @@ const reduce = (arr = [], func) => {
     }
     return total
 }
-const reduceRight = (arr = [], func, init = 0) => {
-    if (arr.length === 0 && init === undefined) return '';
-    let total;
-    let start = arr.length - 1;
-    if (init !== undefined) {
-        total = init;
-    } else {
-        total = arr[start];
-        start--;
+const reduceRight = (arr = [], func) => {
+    if (arr.length < 1 && init === undefined) {
+        throw new Error('Array error: Cannot reduce an empty array!');
     }
-    for (let i = start; i >= 0; i--) {
+    for (let i = arr.length; i >= 0; i--) {
         total = func(total, arr[i], i, arr);
     }
     return total;
