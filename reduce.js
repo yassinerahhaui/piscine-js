@@ -6,9 +6,16 @@ const fold = (arr = [], func, init = 0) => {
     return total
 }
 const foldRight = (arr = [], func, init = 0) => {
-    let total = init
-    let start = arr.length - 2
-    init === 0 ? total = arr[0] : start = arr.length - 1
+    let total
+    let start = arr.length - 1
+    if (init !== undefined) {
+        total = init;
+    } else if (arr.length > 0) {
+        total = arr[start];
+        start--;
+    } else {
+        return undefined;
+    }
     for (let i = start; i >= 0; i--) {
         total = func(total, arr[i], i, arr)
     }
@@ -30,6 +37,8 @@ const reduceRight = (arr = [], func) => {
     return total
 }
 
-// const arr = [1,2,3]
-
-// console.log(foldRight([],(t,i)=> {return t+i}));
+const adder = (a, b) => a + b
+console.log(fold([1, 2, 3], adder, 2)) // returns 8 (2 + 1 + 2 + 3)
+console.log(foldRight([1, 2, 3], adder, 2)) // returns 8 (2 + 3 + 2 + 1)
+console.log(reduce([1, 2, 3], adder)) // returns 6 (1 + 2 + 3)
+console.log(reduceRight([1, 2, 3], adder)) // returns 6 (3 + 2 + 1)
