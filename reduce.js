@@ -30,15 +30,14 @@ const reduce = (arr = [], func) => {
     return total
 }
 const reduceRight = (arr = [], func, init = 0) => {
+    if (arr.length === 0 && init === undefined) return '';
     let total;
     let start = arr.length - 1;
     if (init !== undefined) {
         total = init;
-    } else if (arr.length > 0) {
+    } else {
         total = arr[start];
         start--;
-    } else {
-        return undefined;
     }
     for (let i = start; i >= 0; i--) {
         total = func(total, arr[i], i, arr);
