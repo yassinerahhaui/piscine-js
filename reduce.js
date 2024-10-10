@@ -29,7 +29,7 @@ const reduce = (arr = [], func) => {
     }
     return total
 }
-const reduceRight = (arr = [], func) => {
+const reduceRight = (arr = [], func, init = 0) => {
     let total;
     let start = arr.length - 1;
     if (init !== undefined) {
