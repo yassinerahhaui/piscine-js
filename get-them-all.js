@@ -1,10 +1,10 @@
-export const getArchitects = () => {
-    const architects = document.getElementsByTagName('a')
-    const nonArchitects = document.getElementsByTagName('span')
+const getArchitects = () => {
+    const architects = document.querySelectorAll('a')
+    const nonArchitects = document.querySelectorAll(':not(a)')
     return [architects,nonArchitects]
 }
-export const getClassical = () => {
-    const allA = document.getElementsByTagName('a')
+const getClassical = () => {
+    const allA = document.querySelectorAll('a')
     let classical = [];
     let nonClassical = [];
     for (let el of allA) {
@@ -13,7 +13,7 @@ export const getClassical = () => {
     return [classical,nonClassical]
 }
 
-export const getActive = () => {
+const getActive = () => {
     const elements = getClassical()
     let actives = []
     let nonActives = []
@@ -23,7 +23,7 @@ export const getActive = () => {
     return [actives,nonActives]
 }
 
-export const getBonannoPisano = () => {
+const getBonannoPisano = () => {
     const el = document.getElementById('BonannoPisano')
     const els = getActive()[0]
     return [el,els]
