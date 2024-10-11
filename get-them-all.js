@@ -4,21 +4,17 @@ const getArchitects = () => {
     return [architects,nonArchitects]
 }
 const getClassical = () => {
-    const allA = document.querySelectorAll('a')
-    let classical = [];
-    let nonClassical = [];
-    for (let el of allA) {
-        el.className === "classical" ? classical.push(el) : nonClassical.push(el)
-    }
+    let classical = document.querySelectorAll('a.classical');
+    let nonClassical = document.querySelectorAll('a:not(.classical)');
     return [classical,nonClassical]
 }
 
 const getActive = () => {
-    const elements = getClassical()
+    let classical = document.querySelectorAll('a.classical');
     let actives = []
     let nonActives = []
-    for (let el of elements) {
-        el.active ? actives.push(el) : nonActives.push(el);
+    for (let el of classical) {
+        el.active === true ? actives.push(el) : nonActives.push(el);
     }
     return [actives,nonActives]
 }
