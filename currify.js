@@ -1,6 +1,6 @@
 const currify = (func) => {
     return (arg1) => (arg2) => {
-        return arg1 * arg2
+        return func(arg1 * arg2)
     }
 }
 // const mult2 = (el1, el2) => el1 * el2
