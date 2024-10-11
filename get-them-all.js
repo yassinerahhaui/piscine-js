@@ -4,7 +4,7 @@ const getArchitects = () => {
     return [architects,nonArchitects]
 }
 const getClassical = () => {
-    const allA = document.querySelectorAll('a')
+    const allA = document.getElementsByTagName('a')
     let classical = [];
     let nonClassical = [];
     for (let el of allA) {
