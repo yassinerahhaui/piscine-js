@@ -14,7 +14,11 @@ export const getActive = () => {
     let actives = []
     let nonActives = []
     for (let el of classical) {
-        el.active === true ? actives.push(el) : nonActives.push(el);
+        if (el.active) {
+            actives.push(el)
+        } else {
+            nonActives.push(el)
+        }
     }
     return [actives,nonActives]
 }
