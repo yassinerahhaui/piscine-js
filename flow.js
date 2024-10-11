@@ -8,5 +8,5 @@ const flow = (funcs) => {
         return funcs[1](res)
     }
 }
-const flowedFunctions = flow([add2Numbers, square])
-console.log(flowedFunctions(2, 3) )// -> 25
+// const flowedFunctions = flow([add2Numbers, square])
+// console.log(flowedFunctions(2, 3) )// -> 25
