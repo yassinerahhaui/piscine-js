@@ -6,6 +6,7 @@ const build = (maximum) => {
             div.dataset.foundation = 'true'
         }
         div.classList.add(`brick-${maximum}`);
+        div.id = `brick-${maximum}`
         div.textContent = maximum
         body.appendChild(div)
         maximum--
@@ -15,7 +16,7 @@ const build = (maximum) => {
 const repair = (...ids) => {
     ids.forEach(id => {
         const el = document.querySelector(`.${id}`)
-        if (el.getAttribute("data-foundation")) {
+        if (el.hasAttribute("data-foundation")) {
             el.dataset.repaired = "in progress"
         } else {
             el.dataset.repaired = "true"
