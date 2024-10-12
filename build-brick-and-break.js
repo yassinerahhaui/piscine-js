@@ -1,16 +1,17 @@
 const build = (maximum) => {
     const body = document.body
+    let id = 1
     const setBuild = setInterval(()=> {
         const div = document.createElement('div');
-        if (maximum % 3 === 2) {
+        if (id % 3 === 2) {
             div.dataset.foundation = 'true'
         }
-        div.classList.add(`brick-${maximum}`);
-        div.id = `brick-${maximum}`
-        div.textContent = maximum
+        div.classList.add(`brick-${id}`);
+        div.id = `brick-${id}`
+        div.textContent = id
         body.appendChild(div)
-        maximum--
-        if (maximum === 0) clearInterval(setBuild);
+        id++
+        if (maximum < id) clearInterval(setBuild);
     },100)
 }
 const repair = (...ids) => {
