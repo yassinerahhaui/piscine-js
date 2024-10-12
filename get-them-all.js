@@ -1,22 +1,24 @@
 export const getArchitects = () => {
-    const architects = Array.from(document.getElementsByTagName('a.*'))
+    const architects = Array.from(document.getElementsByTagName('a'))
     const nonArchitects = Array.from(document.querySelectorAll('body > *:not(a)'))
     return [architects,nonArchitects]
 }
 
 export const getClassical = () => {
-    const classical = Array.from(document.querySelectorAll('a.classical'))
-    const nonClassical = Array.from(document.querySelectorAll('a:not(.classical)'))
+    const [architects, nonArchitects] = getArchitects()
+    const classical = architects.filter(el => el.classList.contains("classical"))
+    const nonClassical = architects.filter(el => !el.classList.contains("classical"))
     return [classical,nonClassical]
 }
 export const getActive = () => {
-    const active = Array.from(document.querySelectorAll('a.classical.active'))
-    const nonActive = Array.from(document.querySelectorAll('a.classical:not(.active)'))
+    const [classical,nonClassical] = getClassical()
+    const active = classical.filter(el=> el.classList.contains("active"))
+    const nonActive = classical.filter(el=> !el.classList.contains("active"))
     return [active,nonActive]
 }
 
 export const getBonannoPisano = () => {
+    const [active, nonActive] = getActive()
     const el = document.getElementById('BonannoPisano')
-    const els = Array.from(document.querySelectorAll('a.classical.active'))
-    return [el,els]
+    return [el,active]
 }
