@@ -5,8 +5,8 @@ const generateLetters = () => {
         let size = Math.floor(Math.random() * 26)
         div.textContent = String.fromCharCode(65 + size);
         div.style.fontSize = `${11+i}px`
-        i < 40 ? div.style.fontWaigth = '300': i < 80 ?
-             div.style.fontWaigth = '400' : div.style.fontWaigth = '600'
+        i < 40 ? div.style.fontWeight = '300': i < 80 ?
+             div.style.fontWeight = '400' : div.style.fontWeight = '600'
         document.body.appendChild(div)
     }
 }
