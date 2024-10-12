@@ -4,6 +4,7 @@ const build = (maximum) => {
         const div = document.createElement('div');
         div.setAttribute('foundation','true')
         div.classList.add(`brick-${maximum}`);
+        div.textContent = maximum
         body.appendChild(div)
         maximum--
         if (maximum === 0) clearInterval(setBuild);
@@ -16,8 +17,12 @@ const repair = (...ids) => {
         let num = id.split('-')[1]
         if (Number(num) % 3 === 2) {
             el.setAttribute('repaired','in progress')
+            el.textContent = "in progress"
+            el.style.color = "black"
         } else {
             el.setAttribute("repaired","true")
+            el.textContent = `${num}-repaired`
+            el.style.color = "blue"
         }
     })
 }
