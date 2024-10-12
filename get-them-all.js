@@ -17,6 +17,6 @@ export const getActive = () => {
 
 export const getBonannoPisano = () => {
     const el = document.getElementById('BonannoPisano')
-    const els = Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)'))
+    const els = Array.from(document.querySelectorAll('a.classical.active'))
     return [el,els]
 }
