@@ -19,12 +19,12 @@ const repair = (...ids) => {
         let num = id.split('-')[1]
         if (Number(num) % 3 === 2) {
             el.dataset.repaired = "in progress"
-            el.textContent = "in progress"
-            el.style.color = "black"
+            // el.textContent = "in progress"
+            // el.style.color = "black"
         } else {
-            el.dataset.repaired = "in progress"
-            el.textContent = `${num}-repaired`
-            el.style.color = "blue"
+            el.dataset.repaired = "true"
+            // el.textContent = `${num}-repaired`
+            // el.style.color = "blue"
         }
     })
 }
