@@ -2,7 +2,9 @@ const build = (maximum) => {
     const body = document.body
     const setBuild = setInterval(()=> {
         const div = document.createElement('div');
-        div.setAttribute('foundation','true')
+        if (maximum % 3 == 2) {
+            div.dataset.foundation = 'true'
+        }
         div.classList.add(`brick-${maximum}`);
         div.textContent = maximum
         body.appendChild(div)
@@ -16,11 +18,11 @@ const repair = (...ids) => {
         const el = document.querySelector(`.${id}`)
         let num = id.split('-')[1]
         if (Number(num) % 3 === 2) {
-            el.setAttribute('repaired','in progress')
+            el.dataset.repaired = "in progress"
             el.textContent = "in progress"
             el.style.color = "black"
         } else {
-            el.setAttribute("repaired","true")
+            el.dataset.repaired = "in progress"
             el.textContent = `${num}-repaired`
             el.style.color = "blue"
         }
