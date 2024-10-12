@@ -17,7 +17,7 @@ const repair = (...ids) => {
     ids.forEach(id => {
         const el = document.querySelector(`.${id}`)
         let num = id.split('-')[1]
-        if (Number(num) % 3 === 2) {
+        if (el.getAttribute("foundation")) {
             el.dataset.repaired = "in progress"
             // el.textContent = "in progress"
             // el.style.color = "black"
