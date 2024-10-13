@@ -2,14 +2,13 @@ let circles = [];
 let box;
 let inTheBox = false;
 
-window.addEventListener('click', (e) => createCircle(e));
-
-window.addEventListener('mousemove', (e) => moveCircle(e));
-
 const createCircle = (e) => {
-    let x = e.clientX - 25;
-    let y = e.clientY - 25;
-    let circle = document.createElement('div');
+    let x, y;
+    if (e) {
+        x = e.clientX - 25;
+        y = e.clientY - 25;
+    }
+    const circle = document.createElement('div');
     circle.style.position = 'absolute';
     circle.style.left = `${x}px`;
     circle.style.top = `${y}px`;
@@ -21,13 +20,14 @@ const createCircle = (e) => {
     circles.push(circle);
     inTheBox = false;
 }
-
 const moveCircle = (e) => {
     if (circles.length === 0) return;
-
     let lastCircle = circles[circles.length - 1];
-    const x = e.clientX - 25;
-    const y = e.clientY - 25;
+    let x, y;
+    if (e) {
+        x = e.clientX - 25;
+        y = e.clientY - 25;
+    }
     let boxRect = box.getBoundingClientRect();
 
     if (inTheBox) {
@@ -49,12 +49,13 @@ const moveCircle = (e) => {
         }
     }
 }
-
 const setBox = () => {
     box = document.createElement('div');
     box.classList.add('box');
     box.style.position = 'relative';
     document.body.appendChild(box);
 }
+window.addEventListener('click', (e) => createCircle(e));
+window.addEventListener('mousemove', (e) => moveCircle(e));
 
 export { createCircle, moveCircle, setBox };
