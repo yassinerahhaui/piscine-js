@@ -1,12 +1,13 @@
+// import { colors } from "./fifty-shades-of-cold.data/fifty-shades-of-cold.data.js"
 import { colors } from "./fifty-shades-of-cold.data.js"
 const generateClasses = () => {
     let style = document.createElement('style')
     let textStyle = ""
     colors.map(color=> {
-        let item = `.${color}:{\n\t background-color: ${color} !important;\n}\n`
+        let item = `.${color} {\n\t background-color: ${color};\n}\n`
         textStyle += item
     })
-    style.innerHTML = textStyle
+    style.innerText = textStyle
     document.head.appendChild(style)
 }
 
@@ -14,7 +15,7 @@ const generateColdShades = () => {
     colors.map(color => {
         let div = document.createElement('div')
         div.className = color
-        div.style.backgroundColor = color
+        // div.style.backgroundColor = color
         div.textContent = color
         document.body.appendChild(div)
     })
