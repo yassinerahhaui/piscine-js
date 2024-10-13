@@ -13,8 +13,8 @@ const generateColdShades = () => {
     colors.forEach(color => {
         if (color.match(/(aqua|blue|turquoise|green|cyan|navy|purple)/) !== null) {
             let div = document.createElement('div')
-            div.className = color
-            div.textContent = color
+            div.classList.add(color)
+            div.innerHTML = color
             document.body.appendChild(div)
         }
     })
@@ -23,7 +23,7 @@ const generateColdShades = () => {
 const choseShade = (e) => {
     const divs = Array.from(document.getElementsByTagName("div"))
     divs.forEach(div => {
-        div.style.background = e
+        div.className = e
     });
 }
 
