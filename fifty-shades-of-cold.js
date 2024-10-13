@@ -3,7 +3,7 @@ import { colors } from "./fifty-shades-of-cold.data.js"
 const generateClasses = () => {
     let style = document.createElement('style')
     colors.map(color=> {
-        style.innerText `.${color} {\n\tbackground: ${color};\n}\n`
+        style.innerText += `.${color} {\n\tbackground: ${color};\n};`
     })
     document.head.appendChild(style)
 }
