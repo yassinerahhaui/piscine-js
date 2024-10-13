@@ -5,7 +5,6 @@ export const compose = () => {
             let divs = Array.from(document.querySelectorAll('.note'))
             document.body.removeChild(divs[divs.length - 1])
         } else {
-
             if (key.match(/[a-z]/g) !== null) {
                 const div = document.createElement("div")
                 div.className = "note"
