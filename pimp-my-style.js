@@ -1,20 +1,17 @@
 import { styles } from "./pimp-my-style.data.js"
 let count = 0
-let plus = true
-let ln = styles.length-1
 export const pimp = () => {
-    const btn = document.querySelectorAll('button.button')
-    btn[0].classList.toggle(styles[count])
-    // console.log(btn[0].classList.value);
-    plus ? count++ : count--
-    if (count >= ln) {
-        plus = false
-        btn[0].classList.toggle(styles[count])
-        // console.log(btn[0].classList.value);
-    };
-    if (count <= 0) {
-        plus = true
-        btn[0].classList.toggle(styles[count])
-        // console.log(btn[0].classList.value);
+    const btn = document.querySelectorAll('button.button')[0]
+    const cls = btn.classList
+    if (cls.contains("unpimp")) {
+        count--
+        cls.remove(styles[count]);
+        if (count === 0) cls.toggle("unpimp")
+    } else {
+        cls.add(styles[count]);
+        count++
     }
+    if (count === styles.length) {
+        cls.toggle('unpimp')
+    };
 }
