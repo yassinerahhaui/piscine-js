@@ -18,7 +18,7 @@ const mapKeys = (obj, func) => {
 const reduceKeys = (obj, func, init) => {
     let result = init || Object.keys(obj)[0]
     for (let key of Object.keys(obj)) {
-        if (init && typeof init !== typeof key) return 1;
+        if (init && typeof result !== typeof key) return 1;
         if (!init && key === Object.keys(obj)[0]) continue;
         result = func(result, key, obj)
     }
@@ -26,7 +26,7 @@ const reduceKeys = (obj, func, init) => {
 }
 
 
-// const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
+const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
 
 // console.log(filterKeys(nutrients, (key) => /protein/.test(key)))
 // // output: { protein: 20 }
@@ -34,5 +34,5 @@ const reduceKeys = (obj, func, init) => {
 // console.log(mapKeys(nutrients, (k) => `-${k}`))
 // // output: { -carbohydrates: 12, -protein: 20, -fat: 5 }
 
-// console.log(reduceKeys(nutrients, (acc, cr) =>acc.concat(', ', cr)))
-// // output: carbohydrates, protein, fat
+console.log(reduceKeys(nutrients, (acc, cr) =>acc.concat(', ', cr)))
+// output: carbohydrates, protein, fat
