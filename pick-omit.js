@@ -11,6 +11,7 @@ const pick = (obj,arr) => {
             }
         });
     }
+    return res
 }
 const omit = (obj,arr) => {
     const res = {}
@@ -23,4 +24,5 @@ const omit = (obj,arr) => {
             if (!arr.includes(key)) res[key] = val;
         }
     }
+    return res
 }
