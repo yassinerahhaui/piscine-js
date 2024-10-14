@@ -18,9 +18,12 @@ const reduceValues = (obj, func, init) => {
     // if (obj.length < 1 || obj === undefined) {
     //     throw new Error('Object error: Cannot reduce an empty Object!');
     // }
-    // // let firstkey = Object.keys(obj)[0]
-    let result = init
+    let firstkey = Object.keys(obj)[0]
+    let result = init || obj[firstkey]
     for (let [key, val] of Object.entries(obj)) {
+        if (!init && key === firstkey) {
+            continue
+        }
         result = func(result, val, key, obj)
     }
     return result
