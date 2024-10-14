@@ -6,4 +6,4 @@ const invert = (obj) => {
     return res
 }
 
-console.log(invert({a:"b",c:"e"}));
+// console.log(invert({a:"b",c:"e"}));
