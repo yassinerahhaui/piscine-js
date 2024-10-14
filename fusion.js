@@ -1,0 +1,3 @@
+const fusion = (obj) => {
+    /* array,  */
+}
