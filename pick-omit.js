@@ -6,7 +6,7 @@ const pick = (obj,arr) => {
         }
     } else {
         arr.forEach(str => {
-            if (obj[str] !== undefined) {
+            if (obj[str]) {
                 res[str] = obj[str]
             }
         });
