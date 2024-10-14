@@ -19,10 +19,11 @@ const reduceKeys = (obj, func, init) => {
     let result = init || Object.keys(obj)[0]
     for (let key of Object.keys(obj)) {
         // if (init && typeof init !== typeof key) return 1;
-        if (!init && key === Object.keys(obj)[0]) continue;
-        result = func(result, key, obj)
+        if (typeof init === 'undefined' && key === Object.keys(obj)[0]) continue;
+        result = func(result, key)
     }
-    return result === 'vinegar01000' ? result = 1 : result
+    // return result === 'vinegar01000' ? result = 1 : result
+    return result
 }
 
 
