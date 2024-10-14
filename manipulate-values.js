@@ -14,20 +14,19 @@ const mapValues = (obj, func) => {
     }
     return result
 }
-const reduceValues = (obj, func, init = Object.values(obj)[0]) => {
+const reduceValues = (obj, func, init) => {
     // if (obj.length < 1 || obj === undefined) {
     //     throw new Error('Object error: Cannot reduce an empty Object!');
     // }
     // // let firstkey = Object.keys(obj)[0]
     let result = init
     for (let [key, val] of Object.entries(obj)) {
-        if (init !== val) {
-            result = func(result, val, key, obj)
-        }
+        result = func(result, val, key, obj)
     }
     return result
 }
 
 const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
 
-console.log(reduceValues(nutrients, (acc, cr) => acc + cr))
+// console.log(reduceValues(nutrients, (acc, cr) => acc + cr))
+console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => acc + cr, 3));
