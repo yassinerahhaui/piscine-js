@@ -16,10 +16,15 @@ const mapKeys = (obj, func) => {
     return result
 }
 const reduceKeys = (obj, func, init) => {
-    let result = init || Object.keys(obj)[0]
-    for (let key of Object.keys(obj)) {
+    let keys = Object.keys(obj)
+    let result = init
+    if (typeof init === 'undefined') {
+        result = keys[0]
+        keys = keys.slice(1)
+    }
+    for (let key of keys) {
         // if (init && typeof init !== typeof key) return 1;
-        if (typeof init === 'undefined' && key === Object.keys(obj)[0]) continue;
+        // if (typeof init === 'undefined' && key === Object.keys(obj)[0]) continue;
         result = func(result, key)
     }
     // return result === 'vinegar01000' ? result = 1 : result
