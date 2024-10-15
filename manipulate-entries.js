@@ -52,7 +52,7 @@ const lowCarbs = (obj) => {
     const result = {}
     for (let [key, val] of Object.entries(obj)) {
         const item = (nutritionDB[key].carbs * val) / 100
-        if (item < 50) result[key] = val;
+        if (item < 50) result[key] = parseFloat(parseFloat(val).toFixed(3));
     }
     return result
 }
