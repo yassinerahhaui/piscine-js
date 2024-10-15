@@ -63,7 +63,7 @@ const cartTotal = (obj) => {
     for (let [key, value] of Object.entries(obj)) {
         const child = {}
         for (let [k,v] of Object.entries(nutritionDB[key])) {
-            child[k] = parseFloat((v * value) /100)
+            child[k] = parseFloat(parseFloat((v * value) /100).toFixed(3))
         }
         result[key] = child
     }
