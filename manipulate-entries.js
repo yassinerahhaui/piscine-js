@@ -50,17 +50,10 @@ const totalCalories = (obj) => {
 
 const lowCarbs = (obj) => {
     const result = {}
-    let minKey = Object.keys(obj)[0]
-    let minVal = nutritionDB[minKey].carbs * obj[minKey]
-
     for (let [key, val] of Object.entries(obj)) {
         const item = nutritionDB[key].carbs * val
-        if (minVal > item) {
-            minKey = key;
-            minVal = item
-        }
+        if (item < 50) result[key] = val;
     }
-    result[minKey] = obj[minKey]
     return result
 }
 /* orange: { calories: 245, protein: 4.5, carbs: 65, sugar: 45, fiber: 1, fat: 0.5 } */
