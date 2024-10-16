@@ -5,5 +5,6 @@ const deepCopy = (target) => {
     } else {
         result = Object.assign({}, target)
     }
+
     return result
 }
