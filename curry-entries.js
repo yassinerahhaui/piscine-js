@@ -5,12 +5,10 @@ const defaultCurry = (obj1) => (obj2) => {
     }
     return result
 }
-const mapCurry = (func) => (obj) => {
-    const result = {}
-    for (let [key, val] of Object.entries(obj)) {
-        result[key] = [func(key), func(val)]
+const mapCurry = (func) => {
+    return function (obj) {
+        return Object.fromEntries(Object.entries(obj).map(func))
     }
-    return result
 }
 const reduceCurry = (func) => (obj, init) => {
     let result = init
