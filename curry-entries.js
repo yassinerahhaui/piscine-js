@@ -36,11 +36,10 @@ const reduceScore = (personnel, init = 0) => {
     return reduceCurry((cum, [, values]) => values.isForceUser ? cum + values.pilotingScore + values.shootingScore : cum)(personnel, init)
 
 }
-console.log(reduceScore(personnel,0));
 
 const filterForce = (personnel) => filterCurry(([_,person]) => person.shootingScore >= 80 && person.isForceUser)(personnel)
+
 const mapAverage = (personnel) => mapCurry(([_,person]) => {
-    console.log(person);
     return (person.shootingScore + person.pilotingScore) / 2
 })(personnel)
 
