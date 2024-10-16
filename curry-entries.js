@@ -35,13 +35,13 @@ const filterCurry = (func) => (obj) => {
     return res
 }
 
-// const personnel = {
-//     lukeSkywalker: { id: 5, pilotingScore: 98, shootingScore: 56, isForceUser: true },
-//     sabineWren: { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
-//     zebOrellios: { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
-//     ezraBridger: { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true },
-//     calebDume: { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true },
-// }
+const personnel = {
+    lukeSkywalker: { id: 5, pilotingScore: 98, shootingScore: 56, isForceUser: true },
+    sabineWren: { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
+    zebOrellios: { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
+    ezraBridger: { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true },
+    calebDume: { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true },
+}
 const reduceValues = (obj, func, init) => {
     let firstkey = Object.keys(obj)[0]
     let result = init || obj[firstkey]
@@ -54,14 +54,10 @@ const reduceValues = (obj, func, init) => {
     return result
 }
 
-const reduceScore = (personnel, acc) => reduceValues(personnel, (acc, val , key )=>{
-    let result = Number(acc)
-    if (val.isForceUser) {
-        result += val.pilotingScore + val.shootingScore
-    }
-    return result
-    // return 0 
-}, acc)
+const reduceScore = (personnel, init = 0) => {
+    return reduceCurry((cum, [, values]) => values.isForceUser ? cum + values.pilotingScore + values.shootingScore : cum)(personnel, init)
+
+}
 console.log(reduceScore(personnel,0));
 
 const filterForce = (personnel) => filterCurry((person) => person.shootingScore >= 80)(personnel)
