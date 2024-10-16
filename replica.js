@@ -14,7 +14,7 @@ const replica = (...args) => {
     for (let i = 1; i < args.length; i++) {
         const current = args[i];
         for (const [key, val] of Object.entries(current)) {
-            if (typeof val === 'object' && !Array.isArray(val) && val !== null) {
+            if (typeof val === 'object' && !Array.isArray(val) && val !== null || typeof val === "function" || val instanceof RegExp) {
                 result[key] = result[key] || {};
                 Object.assign(result[key], val);
             } else {
@@ -36,4 +36,4 @@ console.log(replica(
     { a: { b1: { d2: { f3: { i4: 1 }, h3: 1 }, e2: { g3: 2 } } } }
 ));
 //  { a: { b1: { d2: { f3: { i4: 1 }, h3: 1 }, e2: { g3: 2 } }, c1: 2 } }
-console.log({ a: { b1: { d2: { f3: { i4: 1 }, h3: 1 }, e2: { g3: 2 } } } });
+// console.log({ a: { b1: { d2: { f3: { i4: 1 }, h3: 1 }, e2: { g3: 2 } } } });
