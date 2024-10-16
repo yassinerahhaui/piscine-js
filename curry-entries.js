@@ -38,7 +38,7 @@ const reduceScore = (personnel, init = 0) => {
 }
 console.log(reduceScore(personnel,0));
 
-const filterForce = (personnel) => filterCurry(([_,person]) => person.shootingScore >= 80)(personnel)
+const filterForce = (personnel) => filterCurry(([_,person]) => person.shootingScore >= 80 && person.isForceUser)(personnel)
 const mapAverage = (personnel) => mapCurry(([_,person]) => {
     console.log(person);
     return (person.shootingScore + person.pilotingScore) / 2
