@@ -4,7 +4,7 @@ const replica = (obj) => {
     }
     const result = Array.isArray(obj) ? [] : {}
     for (let [key,_] of Object.entries(obj)) {
-        result[key] = replica(obj[key])
+        result[key] = replica(Object.assign(result[key],obj[key]))
     }
     return result
 }
