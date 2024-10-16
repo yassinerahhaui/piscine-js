@@ -14,7 +14,7 @@ const replica = (...args) => {
     for (let i = 1; i < args.length; i++) {
         const current = args[i];
         for (const [key, val] of Object.entries(current)) {
-            if (typeof val === 'object' && !Array.isArray(val) && val !== null && typeof val !== "function" && !val instanceof RegExp) {
+            if (typeof val === 'object' && !Array.isArray(val) && val !== null && typeof val !== "function") {
                 result[key] = result[key] || {};
                 Object.assign(result[key], val);
             } else {
