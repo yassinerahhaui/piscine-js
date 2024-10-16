@@ -44,7 +44,7 @@ const filterCurry = (func) => (obj) => {
 //   }
   
 
-const reduceScore = (personnel,acc) => reduceCurry(([key,value]) => {
+const reduceScore = (personnel,acc) => reduceCurry(([key,value],acc) => {
     if (key === 'isForceUser' && value === true) {
         acc =  value.pilotingScore + value.shootingScore
     }
