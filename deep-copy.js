@@ -3,7 +3,7 @@ const deepCopy = (target) => {
     if (Array.isArray(target)) {
         result = [...target]
     } else {
-        result = {...target}
+        result = JSON.parse(JSON.stringify(target))
     }
     return result
 }
