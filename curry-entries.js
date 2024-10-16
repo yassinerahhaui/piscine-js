@@ -8,7 +8,7 @@ const defaultCurry = (obj1) => (obj2) => {
 const mapCurry = (func) => (obj) => {
     const result = {}
     for (let [key, val] of Object.entries(obj)) {
-        result[key] = func([key, val])
+        result[key] = [func(key), func(val)]
     }
     return result
 }
@@ -42,6 +42,7 @@ console.log(reduceScore(personnel,0));
 
 const filterForce = (personnel) => filterCurry(([_,person]) => person.shootingScore >= 80)(personnel)
 const mapAverage = (personnel) => mapCurry(([_,person]) => {
+    console.log(person);
     return (person.shootingScore + person.pilotingScore) / 2
 })(personnel)
 
