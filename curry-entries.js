@@ -14,13 +14,14 @@ const mapCurry = (func) => (obj) => {
     return result
 }
 const reduceCurry = (func) => (obj,init) => {
-    let firstkey = Object.keys(obj)[0]
-    let result = init || obj[firstkey]
-    for (let [key, val] of Object.entries(obj)) {
-        if (!init && key === firstkey) {
-            continue
-        }
-        result = func(result, val, key, obj)
+    let result = init
+    const arr = Object.entries(obj)
+    if (typeof init === 'undefined') {
+        result = arr[0]
+        arr = arr.slice(1)
+    }
+    for (let item of arr) {
+        result = func(result, [item[0], item[1]])
     }
     return result
 }
@@ -43,9 +44,9 @@ const filterCurry = (func) => (obj) => {
 //   }
   
 
-const reduceScore = (personnel,acc) => reduceCurry((person) => {
-    if (person.isForceUser) {
-        acc =  person.pilotingScore + person.shootingScore
+const reduceScore = (personnel,acc) => reduceCurry(([key,value]) => {
+    if (key === 'isForceUser' && value === true) {
+        acc =  value.pilotingScore + value.shootingScore
     }
     return acc
 })(personnel,acc)
