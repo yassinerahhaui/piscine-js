@@ -14,14 +14,13 @@ const mapCurry = (func) => (obj) => {
     return result
 }
 const reduceCurry = (func) => (obj,init) => {
-    let result = init
-    const arr = Object.entries(obj)
-    if (typeof init === 'undefined') {
-        result = arr[0]
-        arr = arr.slice(1)
-    }
-    for (let item of arr) {
-        result = func(result, [item[0], item[1]])
+    let firstkey = Object.keys(obj)[0]
+    let result = init || obj[firstkey]
+    for (let [key, val] of Object.entries(obj)) {
+        if (!init && key === firstkey) {
+            continue
+        }
+        result = func(result, val, key, obj)
     }
     return result
 }
@@ -44,12 +43,14 @@ const filterCurry = (func) => (obj) => {
 //   }
   
 
-const reduceScore = (personnel) => reduceCurry((person,acc) => {
+const reduceScore = (personnel,acc) => reduceCurry((person) => {
     if (person.isForceUser) {
         acc =  person.pilotingScore + person.shootingScore
     }
     return acc
-})(personnel,0)
+})(personnel,acc)
+// console.log(reduceScore(personnel));
+
 const filterForce = (personnel) => filterCurry((person)=> person.shootingScore >= 80)(personnel)
 const mapAverage = (personnel) => mapCurry((person)=> {
     return (person.shootingScore + person.pilotingScore) / 2 
