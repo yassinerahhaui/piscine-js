@@ -1,8 +1,9 @@
 const defaultCurry = (obj1) => (obj2) => {
+    const result = {...obj1}
     for (let [key,val] of Object.entries(obj2)) {
-        obj1[key] = val;
+        result[key] = val;
     }
-    return obj1
+    return result
 }
 const mapCurry = (func) => (obj) => {
     const result = {}
