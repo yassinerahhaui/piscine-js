@@ -55,10 +55,11 @@ const reduceValues = (obj, func, init) => {
 }
 
 const reduceScore = (personnel, acc) => reduceValues(personnel, (acc, val , key )=>{
+    let result = Number(acc)
     if (val.isForceUser) {
-        acc = val.pilotingScore + val.shootingScore
+        result += val.pilotingScore + val.shootingScore
     }
-    return acc
+    return result
     // return 0 
 }, acc)
 console.log(reduceScore(personnel,0));
