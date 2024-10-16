@@ -1,30 +1,15 @@
-// const replica = ( ...args) => {
-//     let result = args[1]
-//     for (let i = 1;i < Object.keys(args).length; i++) {
-//         for (let[key,val] of Object.entries(args[i])) {
-//             result[key] = val
-//         }
-//     }
-//     // console.log(...args);
-//     return result
-// }
-const replica = (...args) => {
-    const result = {};
-
-    for (let i = 1; i < args.length; i++) {
-        const current = args[i];
-        for (const [key, val] of Object.entries(current)) {
-            if (typeof val === 'object' && !Array.isArray(val) && val !== null && typeof val !== "function" && !(val instanceof RegExp)) {
-                result[key] = result[key] || {};
-                Object.assign(result[key], val);
-            } else {
-                result[key] = val;
+const replica = (...objects) => {
+    const result = {}
+    objects.forEach(obj => {
+        Object.keys(obj).forEach(key => {
+            if (typeof obj[key] === "object" && typeof result[key] === "object" && !Array.isArray(obj[key]) && !Array.isArray(result[key])){
+                result[key] = {...result[key], ...obj[key]}
+            }else {
+                result[key] = obj[key]
             }
-        }
-    }
-    Object.assign(result, args[0]);
-    
-    return result;
+        })
+    });
+    return result
 }
 
 
