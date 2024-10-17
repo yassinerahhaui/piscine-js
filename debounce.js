@@ -15,7 +15,7 @@ const debounce = (func, wait) => {
 	}
 }
 
-const opDebounce = (func, wait, options = { leading: true }) => {
+const opDebounce = (func, wait, options = { leading: false }) => {
 	let {leading} = options
 	return (...args) => {
 		if (leading) {
