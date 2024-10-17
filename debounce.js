@@ -1,22 +1,27 @@
+const writeTitle = (e) => {
+	const title = document.getElementById("title")
+	console.log('jjjjjj');
+	// title.textContent = e.target.value()
+	
+}
+
 const debounce = (func, wait) => {
 	let timeout;
 	return (...args) => {
+		clearTimeout(timeout);
 		timeout = setTimeout(() => {
-			clearTimeout(timeout);
-			func(...args)
+			func.apply(this,args)
 		}, wait)
 	}
 }
+
 const opDebounce = (func, wait,leading = true) => {
 	let timeout;
 	return (...args) => {
 		if (leading) {
-			timeout = setTimeout(() => {
-				clearTimeout(timeout);
-				func(...args)
-			}, wait)
+			debounce(func,wait)
 		} else {
-			func(...args)
+			func.apply(this,args)
 		}
 	}
 }
