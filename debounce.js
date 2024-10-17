@@ -1,9 +1,3 @@
-const writeTitle = (e) => {
-	const title = document.getElementById("title")
-	console.log('jjjjjj');
-	// title.textContent = e.target.value()
-	
-}
 
 const debounce = (func, wait) => {
 	let timeout;
@@ -21,7 +15,7 @@ const opDebounce = (func, wait, options = { leading: false }) => {
 		if (leading) {
 			func.apply(this,args)
 		} else {
-			debounce(func,wait)
+			debounce(func,wait)(...args)
 		}
 	}
 }
