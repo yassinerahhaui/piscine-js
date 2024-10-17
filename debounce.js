@@ -15,8 +15,8 @@ const debounce = (func, wait) => {
 	}
 }
 
-const opDebounce = (func, wait,leading = true) => {
-	let timeout;
+const opDebounce = (func, wait, options = { leading: true }) => {
+	let {leading} = options
 	return (...args) => {
 		if (leading) {
 			debounce(func,wait)
