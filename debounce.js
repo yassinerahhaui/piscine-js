@@ -15,7 +15,7 @@ const opDebounce = (func, wait, options = { leading: false }) => {
 		if (leading) {
 			func.apply(this,args)
 		} else {
-			debounce(func(...args),wait)
+			debounce(func(this,args),wait)
 		}
 	}
 }
