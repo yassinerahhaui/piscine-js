@@ -4,7 +4,7 @@ const throttle = (func, wait) => {
         if (!called) {
             func.apply(this, args);
             called = true
-            timeout = setTimeout(() => {
+            setTimeout(() => {
                 called = false
             }, wait)
         }
@@ -17,7 +17,7 @@ const opThrottle = (func, wait, options = { leading: false, trailing: false }) =
         if (!called) {
             called = true
             if (leading || (leading && trailing)) func.apply(this, args);
-            timeout = setTimeout(() => {
+            setTimeout(() => {
                 if (trailing && !leading) func.apply(this, args);
                 called = false
             }, wait)
