@@ -1,16 +1,22 @@
-const throttle = (func, wait) => {
+const throttle = (func, wait, options = { leading: true, trailing: true }) => {
     let timeout;
     let called = false;
+    const { leading, trailing } = options;
 
     return (...args) => {
-        if (!called) {
-            func.apply(this, args);
-            called = true;
+        if (!timeout) {
+            if (leading) {
+                func.apply(this, args);
+            }
+            called = true; 
+            timeout = setTimeout(() => {
+                if (trailing && called) {
+                    func.apply(this, args);
+                }
+                timeout = null;
+                called = false;
+            }, wait);
         }
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            called = false;
-        }, wait);
     };
 };
 
@@ -33,3 +39,4 @@ const opThrottle = (func, wait, options = { leading: false, trailing: false }) =
         }, wait);
     };
 };
+
