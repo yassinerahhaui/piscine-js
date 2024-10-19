@@ -1,14 +1,14 @@
 const interpolation = (obj) => {
     const durationStep = obj.duration / obj.step
-    const delayStep = (obj.end - obj.start) / obj.step
-    let [x, y] = [0 , durationStep]
+    const delayStep = obj.end / obj.step
+    let [x, y] = [obj.start , obj.start + durationStep]
     const count = setInterval(()=> {
-        obj.callback([parseFloat(x.toFixed(2)), parseFloat(y.toFixed(2))]);
-        y += durationStep
-        x += delayStep
         if (x >= obj.end || y >= obj.duration) {
             clearInterval(count)
         }
+        obj.callback([parseFloat(x.toFixed(2)), parseFloat(y.toFixed(2))]);
+        y += durationStep
+        x += delayStep
     },durationStep)
 }
 
