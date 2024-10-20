@@ -65,7 +65,7 @@ const isWinner = async (country) => {
         }
         const years = results.map(result => result.year).join(", ");
         const scores = results.map(result => result.score).join(", ");
-        return `${country} won the FIFA World Cup in ${years} winning by ${scores};`
+        return `${country} won the FIFA World Cup in ${years} winning by ${scores}`
     } catch (err) {
         return `${country} never was a winner`;
     }
