@@ -7,5 +7,5 @@ let result = arr.map(el=> {
     let middle = Math.ceil(len/2)
     return `${el.slice(middle)}${el.slice(0,middle)}`  
 })
-// result = result.join('')
+result = result.join(' ')
 console.log(result);
