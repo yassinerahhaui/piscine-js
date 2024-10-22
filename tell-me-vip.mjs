@@ -7,25 +7,20 @@ const tellMeVip = async (dirname) => {
     let arr = []
     let id = 0
     for (let file of files) {
-        const newfile = join(arg,file)
+        const newfile = join(arg, file)
         const data = await readFile(`${newfile}`, 'utf8')
         let jsonData = JSON.parse(data)
-        let [firstName,lastName] = file.split(".json")[0].split("_")
+        let [firstName, lastName] = file.split(".json")[0].split("_")
         if (jsonData.answer === 'yes') {
             arr.push(`${lastName} ${firstName}`)
         }
     }
-    if (arr.length > 0) {
-
-        arr.sort()
-        let result = arr.map(el=> {
-            id++
-            el = `${id}. ${el}`
-            return el
-        }).join('\n')
-        writeFile('vip.txt', result)
-    } else {
-        writeFile('vip.txt', "")
-    }
+    arr.sort()
+    let result = arr.map(el => {
+        id++
+        el = `${id}. ${el}`
+        return el
+    }).join('\n')
+    writeFile('vip.txt', result)
 }
 tellMeVip(arg)
